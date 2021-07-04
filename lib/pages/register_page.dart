@@ -156,9 +156,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             noWa: _waNumberController.text,
                             password: _passwordController.text
                           );
-                          print(data['success']);
                           if(data['success']){
-                            print("object");
                             setState(() {
                               _isLoading = false;
                             });

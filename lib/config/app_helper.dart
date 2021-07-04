@@ -6,9 +6,9 @@ class AppHelper {
   static Future<dynamic> isOpenPhase({int? phaseID}) async {
     try {
       var url = Uri.https(API.URL, API.PHASE_CHECK + "/$phaseID");
-      print(url);
+       
       var response = await http.get(url);
-      print(response.body);
+       
       var jsonRes = json.decode(response.body);
       if (response.statusCode == 200) {
         if (jsonRes['success'] == true) {
@@ -38,9 +38,8 @@ class AppHelper {
   static Future<dynamic> getMessage() async {
     try {
       var url = Uri.https(API.URL, API.MESSAGE);
-      print(url);
       var response = await http.get(url);
-      print(response.body);
+       
       var jsonRes = json.decode(response.body);
       if (response.statusCode == 200) {
         if (jsonRes['success'] == true) {

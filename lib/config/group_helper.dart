@@ -6,9 +6,9 @@ class GroupHelper {
   static Future<dynamic> getGroupStanding({String? groupName}) async {
     try {
       var url = Uri.https(API.URL, API.STANDING + "/$groupName");
-      print(url);
+       ;
       var response = await http.get(url);
-      print(response.body);
+       
       var jsonRes = json.decode(response.body);
       if (response.statusCode == 200) {
         if (jsonRes['success'] == true) {
@@ -38,9 +38,9 @@ class GroupHelper {
   static Future<dynamic> getGroupMatches({String? groupName}) async {
     try {
       var url = Uri.https(API.URL, API.GROUP_MATCH + "/$groupName");
-      print(url);
+       ;
       var response = await http.get(url);
-      print(response.body);
+       
       var jsonRes = json.decode(response.body);
       if (response.statusCode == 200) {
         if (jsonRes['success'] == true) {
@@ -78,7 +78,7 @@ class GroupHelper {
         result = "away_win";
       }
       var url = Uri.https(API.URL, API.UPDATE_GROUP + "/$groupName");
-      print(url);
+       ;
       var response = await http.put(url, body: {
         "match_id": matchID,
         "home_team_id": homeTeamId,
@@ -88,7 +88,7 @@ class GroupHelper {
         "is_finished": "1",
         "match_result": result,
       });
-      print(response.body);
+       
       var jsonRes = json.decode(response.body);
       if (response.statusCode == 200) {
         if (jsonRes['success'] == true) {
